@@ -7,6 +7,10 @@ clear all
 clc; 
 close all
 
+% Do you want to write data to .inp-file (1=yes,2=no)
+Wanna = 2;
+
+
 %Directory
 cd /media/janne/Transcend/Janne/Tyot/Academic/PostDoc/Measurements/IPN/60
 
@@ -239,11 +243,11 @@ StepsForInp = [steptimes(1) steptimes(2)-steptimes(1)-strain_time...
     steptimes(5)-steptimes(4)-strain_time];
 
 
-
+if Wanna == 1
 %run('/media/janne/Transcend/Janne/Tyot/Academic/PostDoc/Measurements/IPN/Models/Mallit/malliuusiks.m');
 % This was done for new IPN analysis
 run('/media/janne/Transcend/Janne/Tyot/Academic/PostDoc/Measurements/IPN/Models/Mallit/SameTime_malliuusiks.m');
-
+end
 
 % %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
 end
