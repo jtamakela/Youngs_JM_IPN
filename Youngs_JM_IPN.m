@@ -36,12 +36,6 @@ for i = 1:length(fn); %This defines that whole folder is analyzed.
 % data = textscan(fid,'%n%n%n%n%n%n%n','delimiter',',','headerLines',no_of_headerlines);
 % fclose(fid);
 
-% %Taking values. Changing negatives 
-% index = data{:,1};
-% t = data{:,2};
-% h = -data{:,4};
-% F = -data{:,5};
-
 % OR % % % % % % 
 name = fn(i).name;
 raw_data = importdata(name);
@@ -60,7 +54,6 @@ index = data(:,1);
 % plotyy(t/60, F,t/60, h); %Plotting time in minutes
 % 
 
-%
 
 % Area
 A = pi*r^2;
