@@ -7,9 +7,11 @@ clear all
 clc; 
 close all
 
-% Do you want to write data to .inp-file (1=yes,2=no)
+% Do you want to write data to .inp-file 
+% (1=yes,2=no)
 Wanna = 2;
-
+% How many files (999 means all in the folder)
+HowMany = 999;
 
 %Directory
 cd /media/janne/Transcend/Janne/Tyot/Academic/PostDoc/Measurements/IPN/60
@@ -22,6 +24,10 @@ r = 0.007/2; %RADIUS
 
 
 fn = dir('*.CSV'); %Finds .csv files which are then analyzed
+if HowMany == 999
+    n = length(fn);
+else n = HoMany;
+end
 
 no_of_headerlines = 5; %Bose adds 5 lines to csv-file
 
@@ -31,7 +37,7 @@ scrsz = get(0,'ScreenSize');
 
 % %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
 %i=1;
-for i = 1:length(fn); %This defines that whole folder is analyzed.
+for i = 1:n %This defines that whole folder is analyzed.
 % %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
     
 %waitbar(i/length(fn));
@@ -253,17 +259,6 @@ end
 end
 % %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %% %%
 %% 
-
-
-
-
-
-
-
-
-
-
-
 
 
 
